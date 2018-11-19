@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class EmployeeList extends Component {
     render() {
         return (
-            <section className="employees">
+            <section className="employees list">
               <h1>Employees</h1>
             {
                 this.props.employees.map(employee =>

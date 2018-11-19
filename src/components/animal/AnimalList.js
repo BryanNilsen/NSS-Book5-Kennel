@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 export default class AnimalList extends Component {
 
-  animalOwner(animalId) {
-    console.log("owners", animalId)
+  findOwner(animal_Id) {
+    // console.log("owners", animal_Id)
     let animalOwners = this.props.animalOwners
-      .filter(join => join.animalId === animalId)
-      .map(join => this.props.owners.find(owner => owner.id === join.ownerId).name)
+      .filter(joinTable => joinTable.animalId === animal_Id)
+      .map(joinTable => this.props.owners.find(owner => owner.id === joinTable.ownerId).name)
 
-    console.log('owners', animalOwners);
+    // console.log('owners', animalOwners);
 
     if (animalOwners.length === 0) {
       animalOwners = ["nobody"]
@@ -17,12 +17,12 @@ export default class AnimalList extends Component {
 
   render() {
     return (
-      <article className="animals">
+      <article className="animals list">
         <h1>AnimalList</h1>
         {
           this.props.animals.map(animal =>
             <div key={animal.id}>
-              <p>{animal.name}, which is a {animal.color} {animal.species}, is owned by {this.animalOwner(animal.id).join(" ")}.</p>
+              <p>{animal.name}, which is a {animal.color} {animal.species}, is owned by {this.findOwner(animal.id).join(", ")}.</p>
             </div>
           )
         }
