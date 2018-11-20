@@ -7,11 +7,22 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 
 class Kennel extends Component {
+
+    state = {
+        results: [],
+      }
+
+    setSearchState = (data) =>{
+        this.setState({
+          results: data
+      })
+    }
+
     render() {
         return (
             <React.Fragment>
-                <NavBar />
-                <ApplicationViews />
+                <NavBar setSearchState={this.setSearchState}/>
+                <ApplicationViews searchResults={this.state.results} />
             </React.Fragment>
         )
     }

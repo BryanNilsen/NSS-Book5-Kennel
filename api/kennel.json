@@ -1,0 +1,158 @@
+{
+  "owners": [
+    {
+      "id": 1,
+      "name": "Ryan Tanay",
+      "phone": "615-423-9000"
+    },
+    {
+      "id": 2,
+      "name": "Emma Beaton",
+      "phone": "615-378-8762"
+    },
+    {
+      "id": 3,
+      "name": "Dani Adkins",
+      "phone": "919-736-1143"
+    },
+    {
+      "id": 4,
+      "name": "Adam Oswalt",
+      "phone": "848-903-6553"
+    },
+    {
+      "id": 5,
+      "name": "Fletcher Bangs",
+      "phone": "615-442-1683"
+    },
+    {
+      "id": 6,
+      "name": "Angela Lee",
+      "phone": "615-409-2044"
+    },
+    {
+      "id": 7,
+      "name": "Angela Lee1",
+      "phone": "615-409-2044"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jessica Younker"
+    },
+    {
+      "id": 2,
+      "name": "Jordan Nelson"
+    },
+    {
+      "id": 3,
+      "name": "Zoe LeBlanc"
+    },
+    {
+      "id": 4,
+      "name": "Blaise Roberts"
+    },
+    {
+      "id": 5,
+      "name": "Skip Werk"
+    },
+    {
+      "id": 6,
+      "name": "Noah Shoah"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "animals": [
+    {
+      "id": 1,
+      "species": "dog",
+      "name": "Buster",
+      "color": "brown"
+    },
+    {
+      "id": 2,
+      "species": "cat",
+      "name": "Whiskers",
+      "color": "calico"
+    },
+    {
+      "id": 3,
+      "species": "dog",
+      "name": "Furley",
+      "color": "white"
+    },
+    {
+      "id": 4,
+      "species": "dog",
+      "name": "Pickles",
+      "color": "black"
+    },
+    {
+      "id": 5,
+      "species": "snake",
+      "name": "SSSlick",
+      "color": "green"
+    },
+    {
+      "id": 6,
+      "species": "cat",
+      "name": "Fluffy",
+      "color": "gray"
+    },
+    {
+      "id": 7,
+      "species": "ferret",
+      "name": "Captain",
+      "color": "gray"
+    }
+  ],
+  "animalOwners": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "animalId": 3
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "animalId": 1
+    },
+    {
+      "id": 3,
+      "ownerId": 2,
+      "animalId": 2
+    },
+    {
+      "id": 4,
+      "ownerId": 3,
+      "animalId": 4
+    },
+    {
+      "id": 5,
+      "ownerId": 1,
+      "animalId": 5
+    },
+    {
+      "id": 6,
+      "ownerId": 4,
+      "animalId": 5
+    },
+    {
+      "id": 7,
+      "ownerId": 2,
+      "animalId": 5
+    }
+  ]
+}
