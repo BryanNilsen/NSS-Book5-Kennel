@@ -64,7 +64,7 @@ export default class ApplicationViews extends Component {
   deleteOwner = (id) => {
     return OwnerManager.removeAndList(id)
       .then(owners => this.setState({
-        employees: owners
+        owners: owners
       })
       )
   }
@@ -72,7 +72,7 @@ export default class ApplicationViews extends Component {
   deleteLocation = (id) => {
     return LocationManager.removeAndList(id)
       .then(locations => this.setState({
-        employees: locations
+        locations: locations
       })
       )
   }
