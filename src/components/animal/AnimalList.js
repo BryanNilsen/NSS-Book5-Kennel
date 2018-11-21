@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import "./Animal.css"
 export default class AnimalList extends Component {
 
   findOwner(animal_Id) {
@@ -15,17 +17,30 @@ export default class AnimalList extends Component {
     return animalOwners
   }
 
+
   render() {
     return (
-      <article className="animals list">
-        <h1>AnimalList</h1>
+      <article className="list_title">
+        <h1>Animal List</h1>
+        <section className="animals">
         {
           this.props.animals.map(animal =>
-            <div key={animal.id}>
-              <p>{animal.name}, which is a {animal.color} {animal.species}, is owned by {this.findOwner(animal.id).join(", ")}.</p>
+            <div key={animal.id} className="card">
+              <div className="card-body">
+                <h5 className="card-title">
+                  <img src={`./images/${animal.species}Icon.png`} alt="" className="icon--dog" />
+                  {animal.name}  {/* is owned by {this.findOwner(animal.id).join(", ")}. */}
+                                <a href="#"
+                    onClick={() => this.props.deleteAnimal(animal.id)}
+                    className="card-link">Delete</a>
+                    <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
+                </h5>
+              </div>
             </div>
           )
+
         }
+        </section>
       </article>
     )
   }
