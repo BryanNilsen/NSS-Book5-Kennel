@@ -12,6 +12,7 @@ import LocationManager from "../modules/LocationManager"
 import AnimalDetail from './animal/AnimalDetail'
 import EmployeeDetail from './employee/EmployeeDetail'
 import OwnerDetail from './owner/OwnerDetail'
+import LocationDetail from './location/LocationDetail'
 import "./Kennel.css"
 
 
@@ -51,20 +52,6 @@ export default class ApplicationViews extends Component {
       )
   }
 
-  // deleteEmployee = id => {
-  //   return fetch(`http://localhost:5002/employees/${id}`, {
-  //     method: "DELETE"
-  //   })
-  //     .then(e => e.json())
-  //     .then(() => fetch(`http://localhost:5002/employees`))
-  //     .then(e => e.json())
-  //     .then(employees => this.setState({
-  //       employees: employees
-  //     })
-  //     )
-  // }
-
-
   deleteEmployee = (id) => {
     return EmployeeManager.removeAndList(id)
       .then(employees => this.setState({
@@ -74,16 +61,18 @@ export default class ApplicationViews extends Component {
   }
 
 
-
-  deleteOwner = id => {
-    return fetch(`http://localhost:5002/owners/${id}`, {
-      method: "DELETE"
-    })
-      .then(e => e.json())
-      .then(() => fetch(`http://localhost:5002/owners`))
-      .then(e => e.json())
+  deleteOwner = (id) => {
+    return OwnerManager.removeAndList(id)
       .then(owners => this.setState({
-        owners: owners
+        employees: owners
+      })
+      )
+  }
+
+  deleteLocation = (id) => {
+    return LocationManager.removeAndList(id)
+      .then(locations => this.setState({
+        employees: locations
       })
       )
   }
@@ -94,7 +83,7 @@ export default class ApplicationViews extends Component {
     return (
       <React.Fragment>
         <Route exact path="/locations" render={(props) => {
-          return <LocationList locations={this.state.locations} />
+          return <LocationList locations={this.state.locations} deleteLocation={this.deleteLocation} />
         }} />
         <Route exact path="/animals" render={(props) => {
           return <AnimalList
@@ -122,6 +111,9 @@ export default class ApplicationViews extends Component {
         }} />
         <Route path="/owners/:ownerId(\d+)" render={(props) => {
           return <OwnerDetail {...props} deleteOwner={this.deleteOwner} owners={this.state.owners} />
+        }} />
+        <Route path="/locations/:locationId(\d+)" render={(props) => {
+          return <LocationDetail {...props} deleteLocation={this.deleteLocation} locations={this.state.locations} />
         }} />
       </React.Fragment>
     )
